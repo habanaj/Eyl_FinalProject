@@ -9,41 +9,23 @@ Brief Description:
 Citations:
 Anything else that's relevant:
 '''
-
-
 import json
-
-Eyl = ["7479",
-       "28893",
-       "8017",
-       "42048",
-       "20572",
-       "42060",
-       "27510",
-       "6635",
-       "28893",
-       "8017"]
-Location = ["builders",
-            "omnivore",
-            "camps",
-            "thanksgivings",
-            "harvests",
-            "thaws",
-            "mossy",
-            "booklets",
-            "omnivore",
-            "camps"]
-
-jsonFile = 'EncryptedGroupHints.json'
-with open(jsonFile) as f:
-    jsonData = json.load(f)
     
-dictionaryFile = 'english.txt'
-myFile = open(dictionaryFile, 'r')
-inputData = myFile.read()
-dictionaryList = inputData.split('\n')
+def getEncryptedData():
+    jsonFile = 'EncryptedGroupHints.json'
+    with open(jsonFile) as f:
+        jsonData = json.load(f)
+        
+    dictionaryFile = 'english.txt'
+    myFile = open(dictionaryFile, 'r')
+    inputData = myFile.read()
+    dictionaryList = inputData.split('\n')
+    
+    encryptedMessage = []
+    for i in jsonData['Eyl']:
+        encryptedMessage.append(dictionaryList[int(i)])
+       
+    return encryptedMessage
 
-
-for i in jsonData['Eyl']:
-    print(dictionaryList[int(i)])
-
+if __name__=="__main__":
+    print(getEncryptedData())
