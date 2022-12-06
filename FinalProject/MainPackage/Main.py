@@ -10,6 +10,8 @@ Citations:
 Anything else that's relevant:
 '''
 
+import json
+
 Eyl = ["7479",
        "28893",
        "8017",
@@ -30,3 +32,16 @@ Location = ["builders",
             "booklets",
             "omnivore",
             "camps"]
+
+jsonFile = 'EncryptedGroupHints.json'
+with open(jsonFile) as f:
+    jsonData = json.load(f)
+    
+dictionaryFile = 'english.txt'
+myFile = open(dictionaryFile, 'r')
+inputData = myFile.read()
+dictionaryList = inputData.split('\n')
+
+
+for i in jsonData['Eyl']:
+    print(dictionaryList[int(i)])
