@@ -13,6 +13,7 @@ import json
 
 # This one is in Main.py only imports from the image_Functions module
 from MainPackage import image_functions
+from PIL import Image
     
 def getEncryptedData():
     jsonFile = 'EncryptedGroupHints.json'
@@ -32,7 +33,6 @@ def getEncryptedData():
 
 if __name__=="__main__":
     print(getEncryptedData())
-    
-    image_functions.load_image("OurTeam.jpeg")
+    image_functions.loadImage("OurTeam.jpeg")
     
     
