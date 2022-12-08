@@ -32,6 +32,7 @@ def getEncryptedData():
 
 if __name__=="__main__":
     print(getEncryptedData())
+    
     image_functions.load_image("OurTeam.jpeg")
     
     
