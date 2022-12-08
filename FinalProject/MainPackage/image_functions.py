@@ -9,15 +9,11 @@ Brief Description:
 Citations:
 Anything else that's relevant:
 '''
-from PIL import Image, ImageFilter, ImageDraw, ImageFont
-import os, sys
-#import requests
-from io import BytesIO
+from PIL import Image
 
-def load_image( filename ) :
+def loadImage(fileName) :
     try:
-        myimage = Image.open(filename)
-        myimage.load()
-        return myimage
+        myImage = Image.open(fileName)
+        myImage.show()        
     except:
         return None #This is all we can do at this point. This won't crash here now
