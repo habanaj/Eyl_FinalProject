@@ -11,12 +11,8 @@ Anything else that's relevant:
 '''
 import json
 
-from PIL import Image, ImageFilter, ImageDraw, ImageFont
-import os, sys
-#import requests
-from io import BytesIO
 # This one is in Main.py only imports from the image_Functions module
-from image_functions import *
+from MainPackage import image_functions
     
 def getEncryptedData():
     jsonFile = 'EncryptedGroupHints.json'
@@ -36,3 +32,7 @@ def getEncryptedData():
 
 if __name__=="__main__":
     print(getEncryptedData())
+    
+    image_functions.load_image("OurTeam.jpeg")
+    
+    
