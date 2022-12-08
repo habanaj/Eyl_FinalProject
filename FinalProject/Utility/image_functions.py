@@ -5,13 +5,13 @@ email: habanaj@mail.uc.edu, hall4mj@mail.uc.edu, groenern@mail.uc.edu, buici@mai
 Assignment: Final Project
 Course: IS 4010
 Semester/Year: Fall 2022
-Brief Description: 
+Brief Description: This is our Final Project for Advanced Application Development
 Citations:
 Anything else that's relevant:
 '''
 from PIL import Image
 
-def loadImage(fileName) :
+def loadImage(fileName):
     try:
         myImage = Image.open(fileName)
         myImage.show()        
