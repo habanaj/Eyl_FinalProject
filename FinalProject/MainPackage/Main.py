@@ -12,27 +12,10 @@ Anything else that's relevant:
 import json
 
 # This one is in Main.py only imports from the image_Functions module
-from MainPackage import image_functions
-from PIL import Image
-    
-def getEncryptedData():
-    jsonFile = 'EncryptedGroupHints.json'
-    with open(jsonFile) as f:
-        jsonData = json.load(f)
-        
-    dictionaryFile = 'english.txt'
-    myFile = open(dictionaryFile, 'r')
-    inputData = myFile.read()
-    dictionaryList = inputData.split('\n')
-    
-    encryptedMessage = []
-    for i in jsonData['Eyl']:
-        encryptedMessage.append(dictionaryList[int(i)])
-       
-    return encryptedMessage
+from Utility import image_functions, Encryption
 
 if __name__=="__main__":
-    print(getEncryptedData())
+    print(Encryption.getEncryptedData())
     image_functions.loadImage("OurTeam.jpeg")
     
     
